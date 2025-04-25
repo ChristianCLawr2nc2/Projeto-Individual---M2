@@ -5,7 +5,7 @@
 ## Nome do Projeto
 
 #### Autor do projeto
-Christian de Carvalho Lawrence
+- <a href="http://www.linkedin.com/in/christian-de-carvalho-lawrence">Christian De Carvalho Lawrence</a>
 
 ## Sumário
 
