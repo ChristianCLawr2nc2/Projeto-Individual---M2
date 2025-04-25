@@ -36,7 +36,20 @@ Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e aind
 
 ### 2.2. User Stories (Semana 01)
 
-*Posicione aqui a lista de User Stories levantadas para o projeto. Siga o template de User Stories e utilize a referência USXX para numeração (US01, US02, US03, ...). Indique todas as User Stories mapeadas, mesmo aquelas que não forem implementadas ao longo do projeto. Não se esqueça de explicar o INVEST de 1 User Storie prioritária.*
+- **US01** | Como estudante universitária, quero visualizar a disponibilidade das salas em tempo real, para que eu possa escolher a melhor opção para meu agendamento.
+
+- **US02** | Como estudante, quero reservar uma sala para um horário específico, para que eu possa usá-la com segurança e organização para meu grupo de trabalho.
+
+- **US03** | Como usuário, quero receber notificações de confirmação ou conflito de agendamento, para que eu saiba se minha reserva foi aprovada ou precisa ser alterada.
+
+### Análise INVEST da User Story US02
+
+- **I – Independente:** Pode ser desenvolvida separadamente da visualização de disponibilidade ou do sistema de notificações.
+- **N – Negociável:** A forma como a reserva é feita (via calendário, lista ou botões) pode ser discutida conforme testes de usabilidade.
+- **V – Valiosa:** Resolve diretamente a dor do usuário em reservar espaços com eficiência e segurança.
+- **E – Estimável:** O esforço para desenvolver essa funcionalidade pode ser facilmente medido, já que envolve interação com o banco de dados e interface.
+- **S – Pequena:** Pode ser implementada em uma sprint curta, com poucos endpoints e tela de interface.
+- **T – Testável:** Pode ser testada validando se a reserva foi registrada corretamente e exibida no calendário do sistema.
 
 ---
 
