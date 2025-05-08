@@ -1,0 +1,23 @@
+{
+    "scripts": {
+        "start": "node index.js"
+    },
+    "name": "projeto-individual-m2",
+    "version": "1.0.0",
+    "main": "jest.config.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/issues"
+    },
+    "homepage": "https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2#readme",
+    "description": "",
+    "dependencies": {
+        "express": "^5.1.0"
+    }
+}
