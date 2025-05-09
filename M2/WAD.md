@@ -2,6 +2,7 @@
 
 **_Os trechos em itálico servem apenas como guia para o preenchimento da seção. Por esse motivo, não devem fazer parte da documentação final._**
 
+
 ## Nome do Projeto
 
 #### Autor do projeto
@@ -19,7 +20,7 @@
 
 ## <a name="c1"></a>1. Introdução (Semana 01)
 
-Tendo uma preferência entre as opções 2 que é um Sistema de reserva de salas agendadas.O que o sistema em questão visa é tornar mais fácil o agendamento e reserva de salas em ambiente de ensino, universidades por exemplo. Isso porque, existem estudantes e professores que precisam de determinada sala para uma reunião, estudo em grupo ou até mesmo uma apresentação, porém, têm dificuldades em torno disso devido à organização da mesma pois os processos de reserva de sala são desorganizados, no entanto, manual ou mal distribuídos.
+O que o sistema em questão visa tornar mais fácil o agendamento e reserva de salas, em universidades por exemplo. Isso porque, existem estudantes e professores que precisam de determinada sala para uma reunião, estudo em grupo ou até mesmo uma apresentação, porém, têm dificuldades em torno disso devido à organização da mesma pois os processos de reserva de sala são desorganizados, no entanto, manual ou mal distribuídos.
 Para isso, a solução proposta é o desenvolvimento de uma aplicação web simples e clara que permitiria aos usuários consultar salas em tempo real que estão disponíveis, agendar, de inserir e cancelar agendamento. Ele também fará um painel administrativo que será destinado a ser utilizado pelos responsáveis pelas salas para alimentar horários e aprovações.
 Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e ainda banco de dados e mesmo a criação de uma interface visualmente viável ao espectador e funcional.
  
