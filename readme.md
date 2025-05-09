@@ -1,6 +1,6 @@
 # 📌 Sistema de Gerenciamento de Reservas de Salas
 
-![Room Booking - Web Project](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/M2/assets/Logo/LOGO - PI.png)
+![Room Booking - Web Project](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/M2/assets/Logo/logo.png)
 
 ## 👨‍🎓 Desenvolvedores: 
 
