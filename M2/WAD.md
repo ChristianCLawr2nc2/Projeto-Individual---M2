@@ -31,7 +31,7 @@ Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e aind
 
 *Posicione aqui sua(s) Persona(s) em forma de texto markdown com imagens, ou como imagem de template preenchido. Atualize esta seção ao longo do módulo se necessário.*
 
-![Persona - Amanda Costa](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/M2/assets/persona-pi.png)
+![Persona - Amanda Costa](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/M2/assets/persona/persona-pi.png)
 
 
 ### 2.2. User Stories (Semana 01)
