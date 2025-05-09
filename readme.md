@@ -1,5 +1,5 @@
 <p align="center">
-<a href= "https://www.inteli.edu.br/"><img src="assets/inteli/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="60%"></a>
+<a href= "https://www.inteli.edu.br/"><img src="assets/Inteli/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="60%"></a>
 </p>
 
 ## 👨‍🎓 Integrantes: 
