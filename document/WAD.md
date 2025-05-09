@@ -3,7 +3,9 @@
 **_Os trechos em itálico servem apenas como guia para o preenchimento da seção. Por esse motivo, não devem fazer parte da documentação final._**
 
 
-## Nome do Projeto
+## Room Booking - Web Project
+
+![Logo do Projeto](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Logo/logo.png)
 
 #### Autor do projeto
 - <a href="http://www.linkedin.com/in/christian-de-carvalho-lawrence">Christian De Carvalho Lawrence</a>
@@ -32,7 +34,7 @@ Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e aind
 
 *Posicione aqui sua(s) Persona(s) em forma de texto markdown com imagens, ou como imagem de template preenchido. Atualize esta seção ao longo do módulo se necessário.*
 
-![Persona - Amanda Costa](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/M2/assets/persona/persona-pi.png)
+![Persona - Amanda Costa](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/persona/persona-pi.png)
 
 
 ### 2.2. User Stories (Semana 01)
@@ -55,13 +57,57 @@ Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e aind
 ---
 
 ## <a name="c3"></a>3. Projeto da Aplicação Web
-
+---
 ### 3.1. Modelagem do banco de dados  (Semana 3)
 
 *Posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário.*
 
-*Posicione também o modelo físico com o Schema do BD (arquivo .sql)*
+![Diagrama de tabelas do banco de dados](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/modelo-banco/modelo-banco.png)
 
+**Modelo Físico do Banco de Dados**
+````sql
+Table usuario {
+  id int [pk, increment]
+  nome varchar(100) [not null]
+  email varchar(100) [not null]
+  tipo enum('adiministrador', 'coordenação', 'aluno') [not null]
+}
+
+Table sala {
+  sala_id int [pk, increment]
+  numero varchar(50) [not null, unique]
+  capacidade varchar(10) [not null]
+  andar number [not null]
+  disponivel boolean [default: true]
+}
+
+Table reserva {
+  reserva_id int [pk, increment]
+  usuario_id int [not null]
+  sala_id int [not null]
+  status enum('pendente','reservado', 'cancelado') [default: 'pendente']
+  dia_uso date [not null]
+  data_solicitacao timestamp [default: `now()`]
+  tempo time [not null]
+}
+
+table dia {
+  segunda_feira day
+  terça_feira day
+  quarta_feira day
+  quinta_feira day
+  sexta_feira day
+}
+
+Ref: reserva.usuario_id > usuario.id
+Ref: reserva.sala_id > sala.sala_id
+Ref: dia.segunda_feira > reserva.dia_uso
+Ref: dia.terça_feira > reserva.dia_uso
+Ref: dia.quarta_feira > reserva.dia_uso
+Ref: dia.quinta_feira > reserva.dia_uso
+Ref: dia.sexta_feira > reserva.dia_uso
+````
+---
 ### 3.1.1 BD e Models (Semana 5)
 *Descreva aqui os Models implementados no sistema web*
 
@@ -78,7 +124,15 @@ Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e aind
 
 ### 3.3. Wireframes (Semana 03)
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização).*
+![Wireframe Completo](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Wireframe/wireframe.png)
+
+![Tela de Login](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Wireframe/1.png)
+
+![Tela de Principal](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Wireframe/2.png)
+
+![Tela de Reserva](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Wireframe/3.png)
+
+![Tela de Visualização das Reservas](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Wireframe/4.png)
 
 ### 3.4. Guia de estilos (Semana 05)
 

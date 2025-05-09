@@ -1,10 +1,14 @@
 # 📌 Sistema de Gerenciamento de Reservas de Salas
 
-![Room Booking - Web Project](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/M2/assets/Logo/logo.png)
+![Room Booking - Web Project](https://github.com/ChristianCLawr2nc2/Projeto-Individual---M2/blob/main/document/assets/Logo/logo.png)
+
+---
 
 ## 👨‍🎓 Desenvolvedores: 
 
 - <a href="https://www.linkedin.com/in/christian-de-carvalho-lawrence/">Christian de Carvalho Lawrence</a>
+
+---
 
 ## 📝 Descrição
 
@@ -12,18 +16,22 @@ O que o sistema em questão visa tornar mais fácil o agendamento e reserva de s
 Para isso, a solução proposta é o desenvolvimento de uma aplicação web simples e clara que permitiria aos usuários consultar salas em tempo real que estão disponíveis, agendar, de inserir e cancelar agendamento. Ele também fará um painel administrativo que será destinado a ser utilizado pelos responsáveis pelas salas para alimentar horários e aprovações.
 Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e ainda banco de dados e mesmo a criação de uma interface visualmente viável ao espectador e funcional.
 
+---
+
 ## 📁 Estrutura de pastas
 ```plaintext
 ├── M2/    # Contem a maior parte dos arquivos do projeto.
     ├── assets/     # Contem as imagens usadas na documentação e desenvolvimento do projeto.
     ├── WAD.md      # Contem a documantação do projeto.
 ```
-
+---
 
 ## 🚀 Tecnologias Utilizadas
 - **Frontend:** 
 - **Backend:** 
 - **Banco de Dados:** 
+
+---
 
 ## ✅ Funcionalidades
 - ✅ Cadastro de usuários
@@ -33,6 +41,7 @@ Este projeto é uma forma de aplicar conhecimentos de front-end, back-end e aind
 - ✅ Visualização de reservas
 - ✅ Edição e cancelamento de reservas
 
+---
 
 ## 💻 Configuração para desenvolvimento e execução do código
 
@@ -54,3 +63,4 @@ npm start
 5. Agora você pode acessar a aplicação através do link http://localhost:3000/
 6. O servidor está online.
 
+---
