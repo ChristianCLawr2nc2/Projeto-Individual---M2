@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salas de Reunião</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    /* Formulário */
+    form {
+      margin-bottom: 30px;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    form input, form select, form button {
+      padding: 10px;
+      margin: 5px 10px 15px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    form button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #218838;
+    }
+
+    /* Tabela */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    table th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr.reservada {
+      background-color: #ffd6d6;
+    }
+    tr.disponivel {
+      background-color: #d6ffd6;
+    }
+
+    /* Paginação */
+    .pagination {
+      text-align: center;
+    }
+    .pagination button {
+      margin: 0 5px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid #007bff;
+      background: white;
+      color: #007bff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .pagination button.active, .pagination button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Salas de Reunião</h1>
+
+  <!-- Formulário para adicionar nova sala -->
+  <form id="form-sala">
+    <input type="text" id="nome" placeholder="Nome da sala" required />
+    <input type="text" id="descricao" placeholder="Descrição" required />
+    <select id="status" required>
+      <option value="" disabled selected>Status</option>
+      <option value="disponivel">Disponível</option>
+      <option value="reservada">Reservada</option>
+    </select>
+    <button type="submit">Adicionar Sala</button>
+  </form>
+
+  <!-- Tabela de salas -->
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="salas"></tbody>
+  </table>
+
+  <!-- Paginação -->
+  <div class="pagination" id="pagination"></div>
+
+  <script>
+    const API_URL = '/api/tarefas'; // Ajuste conforme sua API
+    const salasPorPagina = 5;
+    let salas = [];
+    let paginaAtual = 1;
+
+    // Função para buscar salas da API
+    async function carregarSalas() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+
+        if (!Array.isArray(data)) {
+          alert('Erro ao carregar salas.');
+          return;
+        }
+
+        salas = data;
+        paginaAtual = 1;
+        renderizarSalas();
+        renderizarPaginacao();
+      } catch (err) {
+        alert('Erro ao carregar dados.');
+        console.error(err);
+      }
+    }
+
+    // Renderiza a tabela de salas da página atual
+    function renderizarSalas() {
+      const tbody = document.getElementById('salas');
+      tbody.innerHTML = '';
+
+      const inicio = (paginaAtual - 1) * salasPorPagina;
+      const fim = inicio + salasPorPagina;
+      const salasPagina = salas.slice(inicio, fim);
+
+      salasPagina.forEach(sala => {
+        const tr = document.createElement('tr');
+        tr.className = sala.status === 'reservada' ? 'reservada' : 'disponivel';
+        tr.innerHTML = `
+          <td>${sala.nome}</td>
+          <td>${sala.descricao}</td>
+          <td><strong>${sala.status.charAt(0).toUpperCase() + sala.status.slice(1)}</strong></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Renderiza os botões de paginação
+    function renderizarPaginacao() {
+      const paginationDiv = document.getElementById('pagination');
+      paginationDiv.innerHTML = '';
+
+      const totalPaginas = Math.ceil(salas.length / salasPorPagina);
+
+      for (let i = 1; i <= totalPaginas; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = i === paginaAtual ? 'active' : '';
+        btn.addEventListener('click', () => {
+          paginaAtual = i;
+          renderizarSalas();
+          renderizarPaginacao();
+        });
+        paginationDiv.appendChild(btn);
+      }
+    }
+
+    // Envia nova sala para API (simulado)
+    async function adicionarSala(sala) {
+      try {
+        // Simulação do POST - troque aqui para sua API real
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(sala),
+        });
+        if (!res.ok) throw new Error('Erro ao adicionar sala');
+
+        const novaSala = await res.json();
+        salas.push(novaSala);
+        paginaAtual = Math.ceil(salas.length / salasPorPagina);
+        renderizarSalas();
+        renderizarPaginacao();
+      } catch (err) {
+        alert('Falha ao adicionar sala.');
+        console.error(err);
+      }
+    }
+
+    // Captura submit do formulário
+    document.getElementById('form-sala').addEventListener('submit', e => {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const descricao = document.getElementById('descricao').value.trim();
+      const status = document.getElementById('status').value;
+
+      if (!nome || !descricao || !status) {
+        alert('Preencha todos os campos.');
+        return;
+      }
+
+      adicionarSala({ nome, descricao, status });
+
+      e.target.reset();
+    });
+
+    // Carrega salas ao iniciar
+    carregarSalas();
+  </script>
+</body>
+</html>

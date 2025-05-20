@@ -1,19 +1,8 @@
-// Importa o Express
 const express = require('express');
-const app = express();
+const router = express.Router();
 
-// Define a porta do servidor
-const PORT = process.env.PORT || 3000;
-
-// Middleware para interpretar JSON
-app.use(express.json());
-
-// Rota de teste
-app.get('/', (req, res) => {
-  res.send('Servidor está funcionando! 🚀');
+router.get('/', (req, res) => {
+  res.send('API principal funcionando!');
 });
 
-// Inicia o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+module.exports = router;
